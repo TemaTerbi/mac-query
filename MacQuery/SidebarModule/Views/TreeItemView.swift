@@ -118,6 +118,9 @@ struct TreeItemView: View {
                     viewModel.selectedRequest = item
                 }
             }
+            .onAppear {
+                changeNameText = item.title
+            }
         } else {
             DisclosureGroup(
                 isExpanded: $item.isExpanded,
@@ -208,6 +211,7 @@ struct TreeItemView: View {
                 }
             }
             .onAppear {
+                changeNameText = item.title
                 viewModel.$isCreateNewRequest.sink { bool in
                     if bool {
                         if item == viewModel.selectedFolderForCretingNewRequestFromPopUp {
