@@ -15,6 +15,7 @@
 		65B193AD2B61756900295F15 /* TreeFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193AC2B61756900295F15 /* TreeFolderItem.swift */; };
 		65B193B62B621A2F00295F15 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193B52B621A2F00295F15 /* TreeItemView.swift */; };
 		65B193BB2B621AFD00295F15 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193BA2B621AFD00295F15 /* MainViewModel.swift */; };
+		65B193BF2B62CCEB00295F15 /* CreateNewRequestPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193BE2B62CCEB00295F15 /* CreateNewRequestPopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		65B193AC2B61756900295F15 /* TreeFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeFolderItem.swift; sourceTree = "<group>"; };
 		65B193B52B621A2F00295F15 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		65B193BA2B621AFD00295F15 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		65B193BE2B62CCEB00295F15 /* CreateNewRequestPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRequestPopUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				65B193982B6171FF00295F15 /* ContentView.swift */,
+				65B193BE2B62CCEB00295F15 /* CreateNewRequestPopUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B193BF2B62CCEB00295F15 /* CreateNewRequestPopUpView.swift in Sources */,
 				65B193AD2B61756900295F15 /* TreeFolderItem.swift in Sources */,
 				65B193992B6171FF00295F15 /* ContentView.swift in Sources */,
 				65B193A92B61748000295F15 /* SidebarView.swift in Sources */,

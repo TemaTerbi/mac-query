@@ -16,9 +16,16 @@ struct ContentView: View {
             SidebarView()
                 .environmentObject(viewModel)
         } detail: {
-           
+            Text(viewModel.selectedRequest?.title ?? "")
         }
         .environmentObject(viewModel)
+        .disabled(viewModel.isShowAddNewRequest)
+        .overlay {
+            if viewModel.isShowAddNewRequest {
+                CreateNewRequestPopUpView()
+                    .environmentObject(viewModel)
+            }
+        }
     }
 }
 

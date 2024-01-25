@@ -11,13 +11,12 @@ struct SidebarView: View {
     
     @EnvironmentObject private var viewModel: MainViewModel
     
-    @State private var workspaces = TreeFolderItem.createDummyData()
     @State var selectedWorkspace: TreeFolderItem? = nil
     
     var body: some View {
         Section {
             List {
-                ForEach(workspaces) { workspace in
+                ForEach(viewModel.workspaces) { workspace in
                     TreeItemView(item: workspace)
                         .environmentObject(viewModel)
                 }
@@ -28,7 +27,7 @@ struct SidebarView: View {
                 ToolbarItem {
                     Button {
                         withAnimation(.bouncy) {
-                            workspaces.append(TreeFolderItem.createNewFolder())
+                            viewModel.workspaces.append(TreeFolderItem.createNewFolder())
                         }
                     } label: {
                         Image(systemName: "plus.square.on.square")

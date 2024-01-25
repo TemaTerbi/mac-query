@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 
 struct TreeItemView: View {
     
     @EnvironmentObject private var viewModel: MainViewModel
+    
+    @State var cancellables: Set<AnyCancellable> = []
     
     @State var item: TreeFolderItem
     @State private var hoverColor = Color.clear
@@ -24,8 +27,36 @@ struct TreeItemView: View {
         if item.isRequest {
             VStack(spacing: 2) {
                 HStack {
-                    Image(systemName: item.icon)
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                    switch item.requestTypeMethod {
+                    case .GET:
+                        Text(item.requestTypeMethod.getName())
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.white)
+                            .padding(3)
+                            .background(Color.teal.opacity(0.4))
+                            .cornerRadius(4)
+                    case .POST:
+                        Text(item.requestTypeMethod.getName())
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.white)
+                            .padding(3)
+                            .background(Color.orange.opacity(0.4))
+                            .cornerRadius(4)
+                    case .PUT:
+                        Text(item.requestTypeMethod.getName())
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.white)
+                            .padding(3)
+                            .background(Color.indigo.opacity(0.4))
+                            .cornerRadius(4)
+                    case .DELETE:
+                        Text(item.requestTypeMethod.getName())
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.white)
+                            .padding(3)
+                            .background(Color.red.opacity(0.4))
+                            .cornerRadius(4)
+                    }
                     
                     if isNameChange {
                         TextField("Text Field change name", text: $changeNameText)
@@ -72,7 +103,7 @@ struct TreeItemView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
+            .padding(.vertical, 2)
             .padding(.horizontal, 5)
             .background(item == viewModel.selectedRequest ? selectedColor : hoverColor)
             .cornerRadius(8)
@@ -150,14 +181,15 @@ struct TreeItemView: View {
                                         item.createNewFolder()
                                     }
                                 } else if item.isFolder {
-                                    withAnimation {
-                                        item.createNewRequest()
+                                    withAnimation(.smooth(duration: 0.2))  {
+                                        viewModel.isShowAddNewRequest = true
+                                        viewModel.selectedFolderForCretingNewRequestFromPopUp = item
                                     }
                                 }
                             }
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 2)
                     .padding(.horizontal, 5)
                     .background(hoverColor)
                     .cornerRadius(8)
@@ -174,6 +206,18 @@ struct TreeItemView: View {
                         item.isExpanded.toggle()
                     }
                 }
+            }
+            .onAppear {
+                viewModel.$isCreateNewRequest.sink { bool in
+                    if bool {
+                        if item == viewModel.selectedFolderForCretingNewRequestFromPopUp {
+                            if item.isFolder {
+                                item.createNewRequest(withName: viewModel.newRequestName, andDescription: viewModel.newRequestDescription, methodType: viewModel.newRequestTypeMethod)
+                            }
+                        }
+                    }
+                }
+                .store(in: &cancellables)
             }
         }
     }

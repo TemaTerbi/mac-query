@@ -7,6 +7,26 @@
 
 import Foundation
 
+enum RequestTypeMethod {
+    case GET
+    case POST
+    case PUT
+    case DELETE
+    
+    func getName() -> String {
+        switch self {
+        case .GET:
+            "GET"
+        case .POST:
+            "POST"
+        case .PUT:
+            "PUT"
+        case .DELETE:
+            "DELETE"
+        }
+    }
+}
+
 struct TreeFolderItem: Identifiable, Hashable {
     let id = UUID()
     
@@ -19,10 +39,11 @@ struct TreeFolderItem: Identifiable, Hashable {
     let isRequest: Bool
     var isExpanded: Bool = false
     var isSelected: Bool = false
+    let requestTypeMethod: RequestTypeMethod
     var folders: [TreeFolderItem]?
     var requests: [TreeFolderItem]?
     
-    init(title: String, description: String = "", createdAt: Date = Date.now, icon: String = "airplayaudio", folders: [TreeFolderItem] = [], requests: [TreeFolderItem] = [], isWorkspace: Bool = true, isFolder: Bool = false, isRequest: Bool = false) {
+    init(title: String, description: String = "", createdAt: Date = Date.now, icon: String = "airplayaudio", folders: [TreeFolderItem] = [], requests: [TreeFolderItem] = [], isWorkspace: Bool = true, isFolder: Bool = false, isRequest: Bool = false, requestTypeMethod: RequestTypeMethod = .GET) {
         self.title = title
         self.description = description
         self.createdAt = createdAt
@@ -32,6 +53,7 @@ struct TreeFolderItem: Identifiable, Hashable {
         self.isWorkspace = isWorkspace
         self.isFolder = isFolder
         self.isRequest = isRequest
+        self.requestTypeMethod = requestTypeMethod
     }
     
     static func createDummyData() -> [TreeFolderItem] {
@@ -45,11 +67,15 @@ struct TreeFolderItem: Identifiable, Hashable {
     }
     
     mutating func createNewFolder() {
-        self.folders?.append(TreeFolderItem(title: "New Folder", icon: "folder.fill", isWorkspace: false, isFolder: true))
+        self.folders?.append(TreeFolderItem(title: "New Folder", icon: "folder.fill", requests: [], isWorkspace: false, isFolder: true))
     }
     
     mutating func createNewRequest() {
         self.requests?.append(TreeFolderItem(title: "New Request", icon: "shift.fill", isRequest: true))
+    }
+    
+    mutating func createNewRequest(withName name: String, andDescription description: String = "", methodType type: RequestTypeMethod) {
+        self.requests?.append(TreeFolderItem(title: name, description: description, icon: "shift.fill", isRequest: true, requestTypeMethod: type))
     }
     
     mutating func chnageName(newName name: String) {

@@ -3,4 +3,86 @@
    uuid = "38E987F6-8981-443E-BF6C-1E0CED891FA1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42DDBE8E-6EE2-496F-A6F9-C365C0F5CEA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacQuery/MainModule/Views/CreateNewRequestPopUpView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "42DDBE8E-6EE2-496F-A6F9-C365C0F5CEA0 - bb0e6876b6cb2ee8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (MacQuery.RequestTypeMethotd) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #2 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;MacQuery.RequestTypeMethotd&gt;, MacQuery.RequestTypeMethotd, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.focused(SwiftUI.FocusState&lt;Swift.Bool&gt;.Binding) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.TextField&lt;SwiftUI.Text&gt;, &lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onSubmit(of: SwiftUI.SubmitTriggers, _: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in MacQuery.CreateNewRequestPopUpView.body.getter : some"
+                  moduleName = "MacQuery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemsolovev/Desktop/MacQuery/MacQuery/MacQuery/MainModule/Views/CreateNewRequestPopUpView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "42DDBE8E-6EE2-496F-A6F9-C365C0F5CEA0 - 28c858814ba8c0db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (MacQuery.RequestTypeMethotd) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #2 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;MacQuery.RequestTypeMethotd&gt;, MacQuery.RequestTypeMethotd, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.focused(SwiftUI.FocusState&lt;Swift.Bool&gt;.Binding) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.TextField&lt;SwiftUI.Text&gt;, &lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Text, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onSubmit(of: SwiftUI.SubmitTriggers, _: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in MacQuery.CreateNewRequestPopUpView.body.getter : some"
+                  moduleName = "MacQuery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemsolovev/Desktop/MacQuery/MacQuery/MacQuery/MainModule/Views/CreateNewRequestPopUpView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF8384E1-1B54-4E54-998E-5CB907D5B34F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacQuery/Models/WorkspaceModels/TreeFolderItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "createNewRequest(withName:andDescription:methotdType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6018A48-0B29-4B53-A60C-685F052E2A2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacQuery/SidebarModule/Views/TreeItemView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
