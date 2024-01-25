@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		65B193972B6171FF00295F15 /* MacQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193962B6171FF00295F15 /* MacQueryApp.swift */; };
 		65B193992B6171FF00295F15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193982B6171FF00295F15 /* ContentView.swift */; };
-		65B1939B2B6171FF00295F15 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B1939A2B6171FF00295F15 /* Item.swift */; };
 		65B1939D2B61720200295F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B1939C2B61720200295F15 /* Assets.xcassets */; };
 		65B193A02B61720200295F15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B1939F2B61720200295F15 /* Preview Assets.xcassets */; };
+		65B193A92B61748000295F15 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193A82B61748000295F15 /* SidebarView.swift */; };
+		65B193AD2B61756900295F15 /* TreeFolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193AC2B61756900295F15 /* TreeFolderItem.swift */; };
+		65B193B62B621A2F00295F15 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193B52B621A2F00295F15 /* TreeItemView.swift */; };
+		65B193BB2B621AFD00295F15 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193BA2B621AFD00295F15 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		65B193932B6171FF00295F15 /* MacQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B193962B6171FF00295F15 /* MacQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacQueryApp.swift; sourceTree = "<group>"; };
 		65B193982B6171FF00295F15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		65B1939A2B6171FF00295F15 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		65B1939C2B61720200295F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65B1939F2B61720200295F15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		65B193A12B61720200295F15 /* MacQuery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacQuery.entitlements; sourceTree = "<group>"; };
+		65B193A82B61748000295F15 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		65B193AC2B61756900295F15 /* TreeFolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeFolderItem.swift; sourceTree = "<group>"; };
+		65B193B52B621A2F00295F15 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
+		65B193BA2B621AFD00295F15 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +60,10 @@
 		65B193952B6171FF00295F15 /* MacQuery */ = {
 			isa = PBXGroup;
 			children = (
+				65B193B72B621AD800295F15 /* MainModule */,
+				65B193A72B61745500295F15 /* SidebarModule */,
+				65B193AB2B61752F00295F15 /* Models */,
 				65B193962B6171FF00295F15 /* MacQueryApp.swift */,
-				65B193982B6171FF00295F15 /* ContentView.swift */,
-				65B1939A2B6171FF00295F15 /* Item.swift */,
 				65B1939C2B61720200295F15 /* Assets.xcassets */,
 				65B193A12B61720200295F15 /* MacQuery.entitlements */,
 				65B1939E2B61720200295F15 /* Preview Content */,
@@ -70,6 +77,64 @@
 				65B1939F2B61720200295F15 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		65B193A72B61745500295F15 /* SidebarModule */ = {
+			isa = PBXGroup;
+			children = (
+				65B193AA2B61752200295F15 /* Views */,
+			);
+			path = SidebarModule;
+			sourceTree = "<group>";
+		};
+		65B193AA2B61752200295F15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65B193A82B61748000295F15 /* SidebarView.swift */,
+				65B193B52B621A2F00295F15 /* TreeItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65B193AB2B61752F00295F15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65B193AE2B6175D700295F15 /* WorkspaceModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65B193AE2B6175D700295F15 /* WorkspaceModels */ = {
+			isa = PBXGroup;
+			children = (
+				65B193AC2B61756900295F15 /* TreeFolderItem.swift */,
+			);
+			path = WorkspaceModels;
+			sourceTree = "<group>";
+		};
+		65B193B72B621AD800295F15 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				65B193B92B621AEA00295F15 /* ViewModels */,
+				65B193B82B621AE300295F15 /* Views */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		65B193B82B621AE300295F15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65B193982B6171FF00295F15 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65B193B92B621AEA00295F15 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				65B193BA2B621AFD00295F15 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B193AD2B61756900295F15 /* TreeFolderItem.swift in Sources */,
 				65B193992B6171FF00295F15 /* ContentView.swift in Sources */,
-				65B1939B2B6171FF00295F15 /* Item.swift in Sources */,
+				65B193A92B61748000295F15 /* SidebarView.swift in Sources */,
 				65B193972B6171FF00295F15 /* MacQueryApp.swift in Sources */,
+				65B193B62B621A2F00295F15 /* TreeItemView.swift in Sources */,
+				65B193BB2B621AFD00295F15 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
