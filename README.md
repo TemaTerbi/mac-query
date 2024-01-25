@@ -1,6 +1,7 @@
 **Native macOS App - PostMan-like**
 
 **Overview**
+
 This repository contains the source code and documentation for a native macOS application that serves as an alternative to Postman, a popular API testing tool. This application allows developers to send HTTP requests, inspect server responses, and perform various API-related tasks in a user-friendly and efficient manner.
 
 <img width="512" alt="appstore1024" src="https://github.com/TemaTerbi/mac-query/assets/85392692/0d195216-e009-443a-8de6-f903413cc8aa">
@@ -16,7 +17,9 @@ This repository contains the source code and documentation for a native macOS ap
 ... and more!
 
 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Contact
+
 For any questions or suggestions, feel free to reach out to us at tematerbi@mail.ru.
