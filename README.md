@@ -1,4 +1,4 @@
-**Native macOS App - PostMan-like**
+**MacQuery - MacOS app like a PostMan**
 
 **Overview**
 
