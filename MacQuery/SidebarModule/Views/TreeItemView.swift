@@ -216,7 +216,7 @@ struct TreeItemView: View {
                     if bool {
                         if item == viewModel.selectedFolderForCretingNewRequestFromPopUp {
                             if item.isFolder {
-                                item.createNewRequest(withName: viewModel.newRequestName, andDescription: viewModel.newRequestDescription, methodType: viewModel.newRequestTypeMethod)
+                                item.createNewRequest(withName: viewModel.newRequestName, description: viewModel.newRequestDescription, methodType: viewModel.newRequestTypeMethod, andUrl: viewModel.newRequestUrl)
                             }
                         }
                     }

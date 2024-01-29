@@ -15,6 +15,7 @@ struct CreateNewRequestPopUpView: View {
     @State var isInvalid = false
     @State private var newRequestName = ""
     @State private var newRequestDescription = ""
+    @State private var newRequestUrl = ""
     @State private var requestTypeMethod: RequestTypeMethod = .GET
     private var requestTypeMethods: [RequestTypeMethod] = [.GET, .POST, .PUT, .DELETE]
     
@@ -38,6 +39,8 @@ struct CreateNewRequestPopUpView: View {
                 }
                 
                 TextField("Description of new request", text: $newRequestDescription)
+                
+                TextField("URL of new request", text: $newRequestUrl)
                 
                 Picker("Pick the request method type", selection: $requestTypeMethod) {
                     ForEach(requestTypeMethods, id: \.self) { method in
@@ -84,6 +87,7 @@ struct CreateNewRequestPopUpView: View {
                             focusOnNewNameTextField = false
                             viewModel.newRequestName = newRequestName
                             viewModel.newRequestDescription = newRequestDescription
+                            viewModel.newRequestUrl = newRequestUrl
                             viewModel.isCreateNewRequest = true
                         } else {
                             isInvalid = true
@@ -105,6 +109,7 @@ struct CreateNewRequestPopUpView: View {
                         focusOnNewNameTextField = false
                         viewModel.newRequestName = newRequestName
                         viewModel.newRequestDescription = newRequestDescription
+                        viewModel.newRequestUrl = newRequestUrl
                         viewModel.isCreateNewRequest = true
                     } else {
                         isInvalid = true

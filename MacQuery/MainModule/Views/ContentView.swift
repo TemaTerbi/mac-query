@@ -16,7 +16,8 @@ struct ContentView: View {
             SidebarView()
                 .environmentObject(viewModel)
         } detail: {
-            Text(viewModel.selectedRequest?.title ?? "")
+            DetailRequestView()
+                .environmentObject(viewModel)
         }
         .environmentObject(viewModel)
         .disabled(viewModel.isShowAddNewRequest)
