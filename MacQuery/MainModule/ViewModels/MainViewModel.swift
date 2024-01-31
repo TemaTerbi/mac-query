@@ -21,7 +21,7 @@ class MainViewModel: ObservableObject {
     @Published var newRequestTypeMethod: RequestTypeMethod = .GET
     @Published var isCreateNewRequest = false
     @Published var isHowLoader = false
-    @Published var consoleText = "Send your request for display data"
+    @Published var consoleText = ""
     
     private func isShowLoaderView() async {
         await MainActor.run {

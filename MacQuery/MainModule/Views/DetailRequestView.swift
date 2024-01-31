@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SplitView
+import AppKit
 
 struct DetailRequestView: View {
     @EnvironmentObject private var viewModel: MainViewModel
@@ -64,16 +65,8 @@ struct DetailRequestView: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, 25)
             } bottom: {
-                ZStack {
-                    Color.brown.opacity(0.2)
-                    
-                    ScrollView {
-                        VStack {
-                            Text(viewModel.consoleText)
-                        }
-                        .padding(20)
-                    }
-                }
+                JsonTextView(attributedString: highlightJsonSyntax(jsonString: viewModel.consoleText))
+                    .frame(maxWidth: .infinity)
             }
             .constraints(minPFraction: 0.2, minSFraction: 0.2, dragToHideS: true)
         }

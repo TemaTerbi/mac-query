@@ -16,8 +16,11 @@ class RequestSendingManager {
             AF.request(url, method: method).responseData { responseData in
                 switch responseData.result {
                 case .success(let success):
-                    let stringData = String(data: success, encoding: .utf8) ?? ""
-                    cn.resume(returning: stringData)
+                    if let json = try? JSONSerialization.jsonObject(with: success, options: .mutableContainers),
+                       let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+                        let stringResponse = String(decoding: jsonData, as: UTF8.self)
+                        cn.resume(returning: stringResponse)
+                    }
                 case .failure(let failure):
                     cn.resume(returning: "Some failure was happened... \(failure.localizedDescription)")
                 }
