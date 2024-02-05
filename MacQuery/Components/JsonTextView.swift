@@ -21,7 +21,7 @@ struct JsonTextView: NSViewRepresentable {
 
         textView.isEditable = false
         textView.isSelectable = true
-        textView.backgroundColor = NSColor.black.withAlphaComponent(0.6)
+        textView.backgroundColor = NSColor.black.withAlphaComponent(0.3)
         textView.textStorage?.setAttributedString(attributedString)
         textView.textContainerInset = NSSize(width: 10, height: 10)
         
@@ -48,12 +48,12 @@ func highlightJsonSyntax(jsonString: String) -> NSAttributedString {
     attributedString.addAttributes(options, range: fullRange)
 
     // Регулярные выражения для ключей и значений
-    let keyRegexPattern = "\"\\s*([\\w\\s]+?)\\s*\"\\s*:(?!\\s*\\{)"
+    let keyRegexPattern = "\"\\s*([^\"\\s]+?)\\s*\"\\s*\\:"
     let stringRegexPattern = "\"\\s*(.+?)\\s*\"(?=\\s*:\\s)"
     let valueRegexPattern = ":\\s*\"\\s*(.+?)\\s*\""
     let numberRegexPattern = ":\\s*(\\d+\\.?\\d*|\\d*\\.?\\d+)"
     let boolNullRegexPattern = ":\\s*(true|false|null)"
-    let bracesRegexPattern = "[\\[\\]\\{\\}]"
+    let bracesRegexPattern = "[\\[\\]\\{\\}\\,]"
 
     // Словарь с регулярными выражениями и соответствующими цветами
     let syntaxColors: [(pattern: String, color: NSColor)] = [

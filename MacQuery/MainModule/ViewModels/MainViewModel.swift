@@ -22,6 +22,8 @@ class MainViewModel: ObservableObject {
     @Published var isCreateNewRequest = false
     @Published var isHowLoader = false
     @Published var consoleText = ""
+    @Published var statusCode = ""
+    @Published var weightOfFile = ""
     
     private func isShowLoaderView() async {
         await MainActor.run {
@@ -32,10 +34,12 @@ class MainViewModel: ObservableObject {
     func sendRequest(withUrl url: String, typeOfMethod method: HTTPMethod) async {
         await isShowLoaderView()
         
-        let reponse = await RequestSendingManager.shared.sendRequest(withUrl: url, typeOfMethod: method)
+        let response = await RequestSendingManager.shared.sendRequest(withUrl: url, typeOfMethod: method)
         
         await MainActor.run {
-            consoleText = reponse
+            consoleText = response[DictionaryResponse.json.rawValue] ?? ""
+            statusCode = response[DictionaryResponse.statusCode.rawValue] ?? ""
+            weightOfFile = response[DictionaryResponse.weightOfFile.rawValue] ?? ""
         }
         
         await isShowLoaderView()

@@ -52,9 +52,11 @@ struct DetailRequestView: View {
                             HStack {
                                 TextField("Request url", text: $requestTextFieldUrl)
                                     .padding(10)
+                                    .font(.system(size: 14, weight: .semibold, design: .rounded))
                                     .textFieldStyle(.plain)
+                                    .foregroundStyle(Color.orange)
                             }
-                            .background(Color.white)
+                            .background(Color.black.opacity(0.3))
                             .cornerRadius(8)
                             
                             Spacer()
@@ -69,6 +71,67 @@ struct DetailRequestView: View {
                     .frame(maxWidth: .infinity)
             }
             .constraints(minPFraction: 0.2, minSFraction: 0.2, dragToHideS: true)
+            
+            VStack {
+                HStack {
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.green)
+                        
+                        Text(viewModel.statusCode)
+                            .font(.system(size: 15, weight: .semibold, design: .rounded))
+                            .foregroundStyle(Color.green.opacity(0.5))
+                        
+                        Image(systemName: "filemenu.and.selection")
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.blue)
+                        
+                        Text(viewModel.weightOfFile)
+                            .font(.system(size: 15, weight: .semibold, design: .rounded))
+                            .foregroundStyle(Color.blue.opacity(0.5))
+                    }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        switch viewModel.selectedRequest?.requestTypeMethod {
+                        case .GET:
+                            Text(viewModel.selectedRequest?.requestTypeMethod.getName() ?? "")
+                                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                                .foregroundStyle(Color.white)
+                                .padding(3)
+                                .background(Color.teal.opacity(0.4))
+                                .cornerRadius(4)
+                        case .POST:
+                            Text(viewModel.selectedRequest?.requestTypeMethod.getName() ?? "")
+                                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                                .foregroundStyle(Color.white)
+                                .padding(3)
+                                .background(Color.orange.opacity(0.4))
+                                .cornerRadius(4)
+                        case .PUT:
+                            Text(viewModel.selectedRequest?.requestTypeMethod.getName() ?? "")
+                                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                                .foregroundStyle(Color.white)
+                                .padding(3)
+                                .background(Color.indigo.opacity(0.4))
+                                .cornerRadius(4)
+                        case .DELETE:
+                            Text(viewModel.selectedRequest?.requestTypeMethod.getName() ?? "")
+                                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                                .foregroundStyle(Color.white)
+                                .padding(3)
+                                .background(Color.red.opacity(0.4))
+                                .cornerRadius(4)
+                        case .none:
+                            Text(":)))")
+                        }
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: 40)
+            .padding(.horizontal, 10)
         }
         .onChange(of: viewModel.selectedRequest, { oldValue, newValue in
             selectedRequestTypeMethod = viewModel.selectedRequest?.requestTypeMethod ?? .GET

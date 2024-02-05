@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6551E5042B6A9CE800C211B4 /* JsonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551E5032B6A9CE800C211B4 /* JsonTextView.swift */; };
+		6551E50B2B6B9F6400C211B4 /* DictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551E50A2B6B9F6400C211B4 /* DictionaryResponse.swift */; };
 		65B193972B6171FF00295F15 /* MacQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193962B6171FF00295F15 /* MacQueryApp.swift */; };
 		65B193992B6171FF00295F15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B193982B6171FF00295F15 /* ContentView.swift */; };
 		65B1939D2B61720200295F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B1939C2B61720200295F15 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		6551E5032B6A9CE800C211B4 /* JsonTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTextView.swift; sourceTree = "<group>"; };
+		6551E50A2B6B9F6400C211B4 /* DictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryResponse.swift; sourceTree = "<group>"; };
 		65B193932B6171FF00295F15 /* MacQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B193962B6171FF00295F15 /* MacQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacQueryApp.swift; sourceTree = "<group>"; };
 		65B193982B6171FF00295F15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				65B193C62B636E2800295F15 /* RequestTypeMethod.swift */,
+				6551E50A2B6B9F6400C211B4 /* DictionaryResponse.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				65B193C12B635A6D00295F15 /* DetailRequestView.swift in Sources */,
 				65B193AD2B61756900295F15 /* TreeFolderItem.swift in Sources */,
 				65B193992B6171FF00295F15 /* ContentView.swift in Sources */,
+				6551E50B2B6B9F6400C211B4 /* DictionaryResponse.swift in Sources */,
 				65B193A92B61748000295F15 /* SidebarView.swift in Sources */,
 				65B193972B6171FF00295F15 /* MacQueryApp.swift in Sources */,
 				65B193CA2B637F8D00295F15 /* ActivityIndicator.swift in Sources */,
